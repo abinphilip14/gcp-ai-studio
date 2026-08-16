@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #0D1117;
+  --ford-blue: #003478;
+  --ford-light-blue: #00B4D8;
+  --ford-red: #E30613;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0D1117;
+    --foreground: #F8F9FA;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Antenna', 'Arial', 'Helvetica', sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .ford-gradient-bg {
+    background: linear-gradient(135deg, #003478 0%, #00B4D8 100%);
+  }
+  
+  .ford-gradient-text {
+    background: linear-gradient(135deg, #003478 0%, #00B4D8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #003478;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #002D66;
+}
+
+/* Ford Button Styles */
+.btn-ford-primary {
+  @apply bg-ford-blue hover:bg-ford-blue-600 text-white font-medium py-2 px-4 rounded-md transition-all duration-200 shadow-ford;
+}
+
+.btn-ford-secondary {
+  @apply bg-ford-light-blue hover:bg-ford-light-blue-600 text-white font-medium py-2 px-4 rounded-md transition-all duration-200;
+}
+
+.btn-ford-outline {
+  @apply border-2 border-ford-blue text-ford-blue hover:bg-ford-blue hover:text-white font-medium py-2 px-4 rounded-md transition-all duration-200;
+}
+
+/* Ford Card Styles */
+.card-ford {
+  @apply bg-white dark:bg-ford-gray-800 rounded-lg shadow-ford border border-ford-gray-200 dark:border-ford-gray-700;
+}
+
+/* Ford Badge Styles */
+.badge-ford-blue {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-ford-blue-100 text-ford-blue-700;
+}
+
+.badge-ford-red {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-ford-red-100 text-ford-red-700;
+}
+
+/* Ford Input Styles */
+.input-ford {
+  @apply w-full px-4 py-2 border border-ford-gray-300 dark:border-ford-gray-600 rounded-md focus:ring-2 focus:ring-ford-blue focus:border-transparent dark:bg-ford-gray-800 dark:text-white transition-all duration-200;
+}
+
+/* Ford Animations */
+@keyframes ford-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ford-fade-in {
+  animation: ford-fade-in 0.5s ease-out;
+}
+
+/* Ford Logo Pulse */
+@keyframes ford-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.ford-pulse {
+  animation: ford-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
