@@ -796,3 +796,5 @@ MIT
 - ✅ Data Export
 - ✅ BigQuery Integration
 - ✅ Vertex AI Integration
+#   g c p - a i - s t u d i o  
+ 
